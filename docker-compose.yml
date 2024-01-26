@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  trembita_hello_world:
+    image: trembita_hello_world:latest 
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./service_data/static:/opt/apps/soap_service/static
+    entrypoint: ['/opt/apps/soap_service/entrypoint.sh']
+
+  nginx:
+    restart: always
+    image: nginx:1.23
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/conf/django.conf:/etc/nginx/conf.d/default.conf
+      - ./service_data/static:/www/static
+    depends_on:
+      - trembita_hello_world

@@ -1,0 +1,132 @@
+[
+    {
+        "model": "soapservice.person",
+        "pk": 1,
+        "fields": {
+            "inn": "1234567890",
+            "last_name": "Doe",
+            "firstname": "John",
+            "surname": "K",
+            "birthdate": "1990-01-01",
+            "passport_ser": "AB",
+            "passport_num": "123456"
+        }
+    },
+    {
+        "model": "soapservice.person",
+        "pk": 2,
+        "fields": {
+            "inn": "0987654321",
+            "last_name": "Smith",
+            "firstname": "Jane",
+            "surname": "L",
+            "birthdate": "1992-02-02",
+            "passport_ser": "CD",
+            "passport_num": "654321"
+        }
+    },
+    {
+        "model": "soapservice.person",
+        "pk": 3,
+        "fields": {
+            "inn": "1122334455",
+            "last_name": "Brown",
+            "firstname": "Michael",
+            "surname": "M",
+            "birthdate": "1985-05-15",
+            "passport_ser": "EF",
+            "passport_num": "987654"
+        }
+    },
+    {
+        "model": "soapservice.person",
+        "pk": 4,
+        "fields": {
+            "inn": "5566778899",
+            "last_name": "Wilson",
+            "firstname": "Sarah",
+            "surname": "N",
+            "birthdate": "1993-07-21",
+            "passport_ser": "GH",
+            "passport_num": "101112"
+        }
+    },
+    {
+        "model": "soapservice.person",
+        "pk": 5,
+        "fields": {
+            "inn": "1231231234",
+            "last_name": "Taylor",
+            "firstname": "Jessica",
+            "surname": "O",
+            "birthdate": "1988-12-30",
+            "passport_ser": "IJ",
+            "passport_num": "131415"
+        }
+    },
+    {
+        "model": "soapservice.person",
+        "pk": 6,
+        "fields": {
+            "inn": "2020202020",
+            "last_name": "Garcia",
+            "firstname": "Carlos",
+            "surname": "P",
+            "birthdate": "1979-08-24",
+            "passport_ser": "KL",
+            "passport_num": "161718"
+        }
+    },
+    {
+        "model": "soapservice.person",
+        "pk": 7,
+        "fields": {
+            "inn": "3030303030",
+            "last_name": "O'Connor",
+            "firstname": "Fiona",
+            "surname": "Q",
+            "birthdate": "1981-03-17",
+            "passport_ser": "MN",
+            "passport_num": "192021"
+        }
+    },
+    {
+        "model": "soapservice.person",
+        "pk": 8,
+        "fields": {
+            "inn": "4040404040",
+            "last_name": "Kumar",
+            "firstname": "Raj",
+            "surname": "R",
+            "birthdate": "1986-11-09",
+            "passport_ser": "OP",
+            "passport_num": "222324"
+        }
+    },
+    {
+        "model": "soapservice.person",
+        "pk": 9,
+        "fields": {
+            "inn": "5050505050",
+            "last_name": "Chen",
+            "firstname": "Li",
+            "surname": "S",
+            "birthdate": "1995-04-30",
+            "passport_ser": "QR",
+            "passport_num": "252627"
+        }
+    },
+    {
+        "model": "soapservice.person",
+        "pk": 10,
+        "fields": {
+            "inn": "6060606060",
+            "last_name": "Dubois",
+            "firstname": "Émilie",
+            "surname": "T",
+            "birthdate": "1983-09-12",
+            "passport_ser": "ST",
+            "passport_num": "282930"
+        }
+    }
+]
