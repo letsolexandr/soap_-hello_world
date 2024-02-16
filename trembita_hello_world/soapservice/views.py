@@ -33,52 +33,54 @@ def to_dict(element):
 
 
 class Soap(ServiceBase):
-    @rpc(String, _returns=ServiceDateResult)
-    def getPersonInfoPy(ctx, personId):
-        print('-'*100)
-        print("Request inn: " + personId)
-        print(ctx.in_string)
-        soapMsg = to_dict(ctx.in_document)
-        try:
-            print("UXP Heades information:")
-            print("client.xRoadInstance = " +
-                  soapMsg.get('Header').get('client').get('xRoadInstance'))
-            print("client.memberClass = " +
-                  soapMsg.get('Header').get('client').get('memberClass'))
-            print("client.memberCode = " +
-                  soapMsg.get('Header').get('client').get('memberCode'))
-            print("client.subsystemCode = " +
-                  soapMsg.get('Header').get('client').get('subsystemCode'))
-            print("service.xRoadInstance = " +
-                  soapMsg.get('Header').get('service').get('xRoadInstance'))
-            print("service.memberClass = " +
-                  soapMsg.get('Header').get('service').get('memberClass'))
-            print("service.memberCode = " +
-                  soapMsg.get('Header').get('service').get('memberCode'))
-            print("service.subsystemCode = " +
-                  soapMsg.get('Header').get('service').get('subsystemCode'))
-            print("service.serviceCode = " +
-                  soapMsg.get('Header').get('service').get('serviceCode'))
-            print("id = " + soapMsg.get('Header').get('id'))
-            print("userId = " + soapMsg.get('Header').get('userId', 'NONE'))
-        except:
+      @rpc(String, _returns=ServiceDateResult)
+      def getPersonInfoPy(ctx, personId):
+            print('-'*100)
+            print("Request inn: " + personId)
+            print(ctx.in_string)
+            soapMsg = to_dict(ctx.in_document)
+            try:
+                  print("UXP Heades information:")
+                  print("client.xRoadInstance = " +
+                        soapMsg.get('Header').get('client').get('xRoadInstance'))
+                  print("client.memberClass = " +
+                        soapMsg.get('Header').get('client').get('memberClass'))
+                  print("client.memberCode = " +
+                        soapMsg.get('Header').get('client').get('memberCode'))
+                  print("client.subsystemCode = " +
+                        soapMsg.get('Header').get('client').get('subsystemCode'))
+                  print("service.xRoadInstance = " +
+                        soapMsg.get('Header').get('service').get('xRoadInstance'))
+                  print("service.memberClass = " +
+                        soapMsg.get('Header').get('service').get('memberClass'))
+                  print("service.memberCode = " +
+                        soapMsg.get('Header').get('service').get('memberCode'))
+                  print("service.subsystemCode = " +
+                        soapMsg.get('Header').get('service').get('subsystemCode'))
+                  print("service.serviceCode = " +
+                        soapMsg.get('Header').get('service').get('serviceCode'))
+                  print("id = " + soapMsg.get('Header').get('id'))
+                  print("userId = " + soapMsg.get('Header').get('userId', 'NONE'))
+            except:
+                  print("direct request")
+
             print("Save result")
             person = Person.objects.get(inn=personId)
             res = ServiceDateResult(
-                inn=person.inn,
-                firstname=person.firstname,
-                surname=person.surname,
-                birthdate=person.birthdate,
-                passport_ser=person.passport_ser,
-                passport_num=person.passport_num
+                  inn=person.inn,
+                  firstname=person.firstname,
+                  surname=person.surname,
+                  birthdate=person.birthdate,
+                  passport_ser=person.passport_ser,
+                  passport_num=person.passport_num
             )
             print('*'*100)
             return res
 
 
 application = Application([Soap],
-                          tns='http://trembita.gov.ua',
-                          in_protocol=Soap11(validator='soft'),
-                          out_protocol=Soap11()
-                          )
+                              tns='http://trembita.gov.ua',
+                              in_protocol=Soap11(validator='soft'),
+                              out_protocol=Soap11()
+                              )
 hello_app = csrf_exempt(DjangoApplication(application))
